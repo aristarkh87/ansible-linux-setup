@@ -1,0 +1,7 @@
+---
+nas_name: 'a-nas'
+nas_domain: 'aristarkh.net'
+shares: 
+  - public
+  - Data
+  - Multimedia

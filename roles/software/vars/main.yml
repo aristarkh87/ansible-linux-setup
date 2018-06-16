@@ -1,0 +1,48 @@
+---
+apt_softlist:
+  common:
+    - htop
+    - mc
+    - nautilus-dropbox
+    - openvpn
+    - sudo
+    - vlc
+    - vpnc
+    - zsh
+  kde:
+    - krdc
+    - network-manager-openvpn
+    - network-manager-vpnc
+    - yakuake
+  gtk:
+    - network-manager-openvpn-gnome
+    - network-manager-vpnc-gnome
+    - remmina
+    - remmina-plugin-rdp
+  note:
+    - powertop
+    - tlp
+    - tlp-rdw
+
+pacman_softlist:
+  common:
+    - freerdp
+    - htop
+    - keepassxc
+    - mc
+    - networkmanager-openvpn
+    - networkmanager-vpnc
+    - openvpn
+    - sudo
+    - vlc
+    - vpnc
+    - zsh
+  kde:
+    - krdc
+    - yakuake
+  gtk:
+    - remmina
+  note:
+    - powertop
+    - tlp
+    - tlp-rdw
