@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: "nas_username"
+      prompt: "Enter username for NAS"
+      default: "aristarkh"
+    - name: "nas_password"
+      prompt: "Enter password for NAS"
+      private: yes
+  roles:
+    - { role: software, tags: [ 'software' ] }
+    - { role: iptables, tags: [ 'iptables' ] }
+    - { role: autofs, tags: [ 'automount' ] }
+    - { role: nano, tags: [ 'nano' ] }
+    - { role: vim, tags: [ 'vim' ] }
+    - { role: grub, tags: [ 'grub' ] }
+    - { role: backlight, tags: [ 'backlight' ], when: ansible_form_factor == "Notebook" }
