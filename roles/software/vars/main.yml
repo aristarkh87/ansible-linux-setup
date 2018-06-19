@@ -2,6 +2,7 @@
 apt_softlist:
   common:
     - htop
+    - keepassxc
     - mc
     - nautilus-dropbox
     - openvpn
