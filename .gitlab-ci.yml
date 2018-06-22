@@ -1,0 +1,5 @@
+image: aristarkh87/ansible
+
+check:
+  script:
+    - ansible-playbook --syntax-check playbook.yml
