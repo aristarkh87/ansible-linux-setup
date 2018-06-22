@@ -1,4 +1,7 @@
-image: aristarkh87/ansible
+image: alpine
+
+before_script:
+  - apk add --no-cache ansible
 
 check:
   script:
