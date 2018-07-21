@@ -1,4 +1,5 @@
 # Getting started
+[![Build Status](https://travis-ci.org/aristarkh87/ansible-linux-setup.svg?branch=master)](https://travis-ci.org/aristarkh87/ansible-linux-setup)
 
 ## Requirements
 
