@@ -1,0 +1,4 @@
+---
+- name: Update grub config
+  become: yes
+  command: grub-mkconfig -o /boot/grub/grub.cfg

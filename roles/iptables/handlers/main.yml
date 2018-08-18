@@ -1,0 +1,4 @@
+---
+- name: Run iptables script
+  become: yes
+  command: bash /etc/iptables/iptables.sh

@@ -1,18 +1,15 @@
 ---
 - name: Create iptables.sh
   become: yes
-  template: 
+  template:
     src: iptables.sh.j2
     dest: "{{ iptables_script }}"
     mode: 0755
-
-- name: Run iptables script
-  become: yes
-  command: bash /etc/iptables/iptables.sh
+  notify: Run iptables script
 
 - name: Enable iptables units
   become: yes
-  systemd: 
+  systemd:
     name: "{{ item }}"
     enabled: yes
   with_items:

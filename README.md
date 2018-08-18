@@ -1,12 +1,11 @@
 # Getting started
-[![Build Status](https://travis-ci.org/aristarkh87/ansible-linux-setup.svg?branch=master)](https://travis-ci.org/aristarkh87/ansible-linux-setup)
 
 ## Requirements
 
 * git
 * python3 `>= 3.5`
-* python3-virtualenv
-* ansible `>= 2.5`
+* virtualenv
+* ansible `>= 2.4`
 
 ## Installation
 
@@ -18,12 +17,13 @@
 
 2. Install Ansible and run playbook:
     ```
-    pip install -r requirements.txt
+    pip install ansible ansible-lint
     ansible-playbook ${parameters} playbook.yml
     ```
 
     for example:
     ```
+    ansible-playbook playbook.yml
     ansible-playbook --tags iptables playbook.yml
     ```
 
