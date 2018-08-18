@@ -1,6 +1,6 @@
 ---
 - name: Create secret file
-  template: 
+  template:
     src: "secret.j2"
     dest: "{{ secret_file }}"
     mode: 0600
@@ -15,21 +15,21 @@
 
 - name: Create mount units
   become: yes
-  template: 
+  template:
     src: "mount.j2"
     dest: "/etc/systemd/system/{{ mount_directory | basename }}-{{ item }}.mount"
   with_items: "{{ shares }}"
 
 - name: Create automount units
   become: yes
-  template: 
+  template:
     src: "automount.j2"
     dest: "/etc/systemd/system/{{ mount_directory | basename }}-{{ item }}.automount"
   with_items: "{{ shares }}"
 
 - name: Restart automount units
   become: yes
-  systemd: 
+  systemd:
     name: "{{ mount_directory | basename }}-{{ item }}.automount"
     daemon_reload: yes
     enabled: yes
