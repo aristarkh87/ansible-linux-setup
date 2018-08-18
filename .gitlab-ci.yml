@@ -5,4 +5,4 @@ before_script:
 
 check:
   script:
-    - ansible-playbook --syntax-check playbook.yml
+    - ansible-playbook --syntax-check -vvv playbook.yml
