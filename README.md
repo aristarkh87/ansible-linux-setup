@@ -4,20 +4,20 @@
 
 * git
 * python3 `>= 3.5`
-* virtualenv
-* ansible `>= 2.4`
+* python3-venv
+* ansible `>= 2.5`
 
 ## Installation
 
-1. Setup virtualenv:
+1. Setup venv:
     ```
-    virtualenv -p python3 --system-site-packages ./ansible
-    source ./ansible/bin/activate
+    python3 -m venv --system-site-packages ansible
+    source ansible/bin/activate
     ```
 
 2. Install Ansible and run playbook:
     ```
-    pip install ansible ansible-lint
+    pip install ansible
     ansible-playbook ${parameters} playbook.yml
     ```
 
