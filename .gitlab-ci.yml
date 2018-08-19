@@ -1,8 +1,4 @@
-image: alpine
-
-before_script:
-  - apk add --no-cache ansible
-
 check:
+  image: registry.gitlab.com/aristarkh87/docker-ansible-lint
   script:
-    - ansible-playbook --syntax-check -vvv playbook.yml
+    - ansible-lint -v playbook.yml
