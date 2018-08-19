@@ -1,0 +1,4 @@
+---
+- name: Apply backlight script
+  become: yes
+  command: sh {{ backlight_file }}

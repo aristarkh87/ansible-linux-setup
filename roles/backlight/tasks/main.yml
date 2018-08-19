@@ -1,7 +1,16 @@
 ---
-- name: Create xbacklight script
+- name: Get max brightness
+  command: cat {{ max_brightness_file }}
+  register: max_brightness
+  changed_when: False
+
+- name: Set brightness value
+  set_fact: brightness_value={{ (brightness_percent * max_brightness.stdout | int / 100) | int }}
+
+- name: Create backlight script
   become: yes
   template:
     src: "backlight-{{ ansible_pkg_mgr }}.j2"
     dest: "{{ backlight_file }}"
     mode: 0755
+  notify: Apply backlight script
