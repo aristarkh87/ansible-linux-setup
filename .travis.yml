@@ -1,0 +1,17 @@
+language: python
+python:
+ - "2.7"
+ - "3.6"
+
+env:
+  - version: "2.4.*"
+  - version: "2.5.*"
+  - version: "2.6.*"
+  - version: "2.7.*"
+
+install:
+  - pip install ansible==${version} ansible-lint
+
+script:
+  - ansible-playbook -vvv --syntax-check playbook.yml
+  - ansible-lint -v playbook.yml
