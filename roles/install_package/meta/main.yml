@@ -1,16 +1,12 @@
 ---
 galaxy_info:
-  role_name: autofs
+  role_name: install_package
   author: Oleg Dolgikh
-  description: Setup autofs
+  description: Install package
   license: MIT
   min_ansible_version: 2.4
   platforms:
     - name: Ubuntu Linux
     - name: Arch Linux
 
-dependencies:
-  - role: install_package
-    packages:
-      - 'autofs'
-      - 'cifs-utils'
+dependencies: []
