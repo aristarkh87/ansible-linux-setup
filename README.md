@@ -1,3 +1,6 @@
+# Ansible Linux Setup
+[![Build Status](https://travis-ci.org/aristarkh87/ansible-linux-setup.svg?branch=master)](https://travis-ci.org/aristarkh87/ansible-linux-setup)
+
 # Getting started
 
 ## Requirements
@@ -5,7 +8,7 @@
 * git
 * python3 `>= 3.5`
 * python3-venv
-* ansible `>= 2.5`
+* ansible `>= 2.4`
 
 ## Installation
 
