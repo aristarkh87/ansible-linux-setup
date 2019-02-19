@@ -30,4 +30,4 @@
     - role: backlight
       tags:
        - 'backlight'
-      when: ansible_form_factor == "Notebook" }
+      when: ansible_form_factor == "Notebook"
