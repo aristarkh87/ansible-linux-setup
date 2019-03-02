@@ -1,16 +1,12 @@
 ---
 galaxy_info:
-  role_name: autofs
+  role_name: backlight
   author: Oleg Dolgikh
-  description: Setup autofs
+  description: Setup backlight
   license: MIT
   min_ansible_version: 2.4
   platforms:
     - name: Ubuntu Linux
     - name: Arch Linux
 
-dependencies:
-  - role: install_package
-    packages:
-      - 'autofs'
-      - 'cifs-utils'
+dependencies: []

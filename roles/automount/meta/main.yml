@@ -1,3 +1,15 @@
 ---
+galaxy_info:
+  role_name: automount
+  author: Oleg Dolgikh
+  description: Setup automount
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu Linux
+    - name: Arch Linux
+
 dependencies:
-  - { role: install_package, packages: [ 'cifs-utils' ] }
+  - role: install_package
+    packages:
+      - 'cifs-utils'
