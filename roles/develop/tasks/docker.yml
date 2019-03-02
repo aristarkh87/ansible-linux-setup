@@ -1,0 +1,46 @@
+---
+- name: Ensure old versions of Docker are not installed
+  apt:
+    name:
+      - docker
+      - docker-engine
+    state: absent
+
+- name: Ensure dependencies are installed
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+    state: present
+
+- name: Add Docker apt key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    state: present
+
+- name: Add Docker repository
+  apt_repository:
+    repo: "{{ docker_apt_repository }}"
+    state: present
+    update_cache: true
+
+- name: Install Docker
+  apt:
+    name:
+      - "docker-ce"
+      - "docker-ce-cli"
+      - "containerd.io"
+    state: present
+
+- name: Install Docker Compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64
+    dest: "/usr/local/bin/docker-compose"
+    mode: 0755
+
+- name: Ensure docker users are added to the docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: true

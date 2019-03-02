@@ -1,0 +1,6 @@
+---
+- import_tasks: pip.yml
+
+- import_tasks: docker.yml
+
+- import_tasks: vscode.yml

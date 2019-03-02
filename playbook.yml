@@ -27,6 +27,9 @@
     - role: grub
       tags:
        - 'grub'
+    - role: develop
+      tags:
+        - 'develop'
     - role: backlight
       tags:
        - 'backlight'
