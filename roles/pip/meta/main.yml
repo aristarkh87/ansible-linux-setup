@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: develop
+  role_name: pip
   author: Oleg Dolgikh
-  description: Utilities for code development
+  description: Install PIP
   license: MIT
   min_ansible_version: 2.4
   platforms:

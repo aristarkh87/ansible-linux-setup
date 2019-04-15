@@ -27,9 +27,15 @@
     - role: grub
       tags:
        - 'grub'
-    - role: develop
+    - role: pip
       tags:
-        - 'develop'
+        - 'pip'
+    - role: docker
+      tags:
+        - 'docker'
+    - role: vscode
+      tags:
+        - 'vscode'
     - role: backlight
       tags:
        - 'backlight'
