@@ -8,7 +8,7 @@
 * git
 * python3 `>= 3.5`
 * python3-venv
-* ansible `>= 2.4`
+* ansible `>= 2.8`
 
 ## Installation
 
