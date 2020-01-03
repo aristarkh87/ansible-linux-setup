@@ -1,0 +1,12 @@
+---
+- name: Download get-pip.py
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: "/tmp/get-pip.py"
+
+- name: Install pip
+  become: yes
+  command: "python3 ./get-pip.py"
+  args:
+    chdir: /tmp
+    creates: /usr/local/bin/pip

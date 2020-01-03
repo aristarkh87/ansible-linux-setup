@@ -10,24 +10,29 @@
       private: yes
   roles:
     - role: software
-      tags:
-       - 'software'
+      tags: ['software']
+
     - role: iptables
-      tags:
-       - 'iptables'
+      tags: ['iptables']
+
     - role: automount
-      tags:
-       - 'automount'
+      tags: ['automount']
+
     - role: nano
-      tags:
-       - 'nano'
+      tags: ['nano']
+
     - role: vim
-      tags:
-       - 'vim'
+      tags: ['vim']
+
     - role: grub
-      tags:
-       - 'grub'
+      tags: ['grub']
+
+    - role: pip
+      tags: ['pip']
+
+    - role: vscode
+      tags: ['vscode']
+
     - role: backlight
-      tags:
-       - 'backlight'
+      tags: ['backlight']
       when: ansible_form_factor == "Notebook"
