@@ -1,5 +1,5 @@
 ---
 - name: Install package
   become: yes
-  apt: name={{ item }}
-  with_items: "{{ packages }}"
+  apt:
+    name: "{{ packages }}"

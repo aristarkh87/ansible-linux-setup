@@ -37,6 +37,7 @@
   with_items: "{{ shares }}"
 
 - name: Create symlinks to mount dir
+  become: yes
   file:
     src: "{{ mount_directory }}"
     dest: "{{ ansible_user_dir }}/{{ mount_directory | basename }}"
