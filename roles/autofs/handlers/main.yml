@@ -1,0 +1,6 @@
+---
+- name: Restart autofs
+  become: yes
+  systemd:
+    name: "autofs"
+    state: restarted

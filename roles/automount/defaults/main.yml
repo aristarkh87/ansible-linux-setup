@@ -2,3 +2,4 @@
 nas_fqdn: "{{ nas_name }}.{{ nas_domain }}"
 secret_file: "{{ ansible_user_dir }}/.{{ nas_name }}"
 mount_directory: "/storage"
+service_name: "{{ mount_directory | basename }}-{{ item }}"

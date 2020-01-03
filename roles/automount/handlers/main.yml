@@ -1,0 +1,7 @@
+---
+- name: Restart automount units
+  become: yes
+  systemd:
+    name: "{{ service_name }}.automount"
+    state: restarted
+  with_items: "{{ shares }}"

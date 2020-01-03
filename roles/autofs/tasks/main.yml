@@ -11,7 +11,8 @@
     src: "secret.j2"
     dest: "{{ secret_file }}"
     mode: 0600
-  when: nas_password is defined
+  when: nas_password | length > 0
+  notify: Restart autofs
 
 - name: Create directory for mounts
   become: yes
@@ -28,6 +29,7 @@
     src: "auto.map.j2"
     dest: "{{ autofs_dir }}/auto.storage"
   with_items: "{{ shares }}"
+  notify: Restart autofs
 
 - name: Create autofs autofs.master
   become: yes
@@ -35,11 +37,11 @@
     src: "auto.master.j2"
     dest: "{{ autofs_dir }}/auto.master.d/{{ nas_name }}.autofs"
     mode: 0600
+  notify: Restart autofs
 
-- name: Restart autofs
+- name: Enable autofs
   become: yes
   systemd:
     name: "autofs"
     daemon_reload: yes
     enabled: yes
-    state: restarted
