@@ -32,6 +32,7 @@
 
     - role: vscode
       tags: ['vscode']
+      when: ansible_pkg_mgr == 'apt'
 
     - role: backlight
       tags: ['backlight']
