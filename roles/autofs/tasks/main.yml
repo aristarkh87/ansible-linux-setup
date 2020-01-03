@@ -11,7 +11,7 @@
     src: "secret.j2"
     dest: "{{ secret_file }}"
     mode: 0600
-  when: nas_password != ""
+  when: nas_password | length > 0
   notify: Restart autofs
 
 - name: Create directory for mounts
