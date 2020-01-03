@@ -1,4 +1,11 @@
 ---
+- name: Install cifs-utils
+  become: yes
+  package:
+    name:
+      - autofs
+      - cifs-utils
+
 - name: Create secret file
   template:
     src: "secret.j2"

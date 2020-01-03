@@ -1,4 +1,9 @@
 ---
+- name: Install vim
+  become: yes
+  package:
+    name: vim
+
 - name: Create vim config
   copy:
     src: vimrc

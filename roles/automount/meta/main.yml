@@ -8,8 +8,3 @@ galaxy_info:
   platforms:
     - name: Ubuntu Linux
     - name: Arch Linux
-
-dependencies:
-  - role: install_package
-    packages:
-      - 'cifs-utils'

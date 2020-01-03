@@ -1,4 +1,9 @@
 ---
+- name: Install nano
+  become: yes
+  package:
+    name: nano
+
 - name: Enable includes for syntax highlight
   become: yes
   replace:
