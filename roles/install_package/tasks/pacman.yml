@@ -1,5 +1,0 @@
----
-- name: Install package
-  become: yes
-  pacman:
-    name: "{{ packages }}"
