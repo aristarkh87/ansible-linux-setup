@@ -9,7 +9,8 @@
     src: "secret.j2"
     dest: "{{ secret_file }}"
     mode: 0600
-  when: nas_password is defined
+  when: nas_password != ""
+  notify: Restart automount units
 
 - name: Create directories for mounts
   become: yes
@@ -22,26 +23,27 @@
   become: yes
   template:
     src: "mount.j2"
-    dest: "/etc/systemd/system/{{ mount_directory | basename }}-{{ item }}.mount"
+    dest: "/etc/systemd/system/{{ service_name }}.mount"
   with_items: "{{ shares }}"
+  notify: Restart automount units
 
 - name: Create automount units
   become: yes
   template:
     src: "automount.j2"
-    dest: "/etc/systemd/system/{{ mount_directory | basename }}-{{ item }}.automount"
+    dest: "/etc/systemd/system/{{ service_name }}.automount"
   with_items: "{{ shares }}"
+  notify: Restart automount units
 
-- name: Restart automount units
+- name: Enable automount units
   become: yes
   systemd:
-    name: "{{ mount_directory | basename }}-{{ item }}.automount"
+    name: "{{ service_name }}.automount"
     daemon_reload: yes
     enabled: yes
-    state: restarted
   with_items: "{{ shares }}"
 
-- name: Create symlinks to mount dir
+- name: Create symlink to mount dir
   become: yes
   file:
     src: "{{ mount_directory }}"
